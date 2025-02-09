@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move & Rotate Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e1e;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100px; /* Adjust size */
+            position: absolute;
+            top: 50%;
+            left: 10%; /* Start from the left */
+            transform: translateY(-50%);
+            transition: transform 2s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="animatedImg" src="https://via.placeholder.com/100" alt="Moving Image">
+
+    <script>
+        window.onload = function () {
+            let img = document.getElementById("animatedImg");
+            setTimeout(() => {
+                img.style.transform = "translate(400px, -50%) rotate(360deg)"; // Moves right + Rotates
+            }, 100);
+        };
+    </script>
+
+</body>
+</html>
